@@ -13,14 +13,18 @@ jobs:
       run:
         working-directory: app/
     steps:
-      - name: checkout repo
+      - name: checkout repo.
         uses: actions/checkout@v2
 
-      - name: install dependencies
+      - name: install dependencies.
         run: npm install
-      
-      - name: run test suite
-        run: echo "running npm test."
+        
+      - name: running the app.
+        run: npm start 
+
+      - name: run test suite.
+        run: npm test
+        
   start-server:
     runs-on: ubuntu-latest
     needs: test
