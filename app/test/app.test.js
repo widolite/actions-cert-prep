@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../index');
+const app = require('../app');
 
 describe('GET /', () => {
   it('should respond with Hello, World!', (done) => {
