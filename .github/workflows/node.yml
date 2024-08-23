@@ -9,13 +9,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
-
-      - name: change app cwd
-        run: cd app
-
+        
       - name: install dependencies
         run: npm install
       
@@ -24,13 +24,13 @@ jobs:
   start-server:
     runs-on: ubuntu-latest
     needs: test
+    defaults:
+      run:
+        working-directory: app/
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
       
-      - name: change app cwd
-        run: cd app
-
       - name: install dependencies
         run: npm install
 
