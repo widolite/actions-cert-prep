@@ -44,3 +44,6 @@ jobs:
       - name: conditional step.
         run: echo "this step only runs on the main branch"
         if: github.ref == 'refs/heads/main'
+      
+      - name: print the secrets.
+        run: echo "SECRET_VALUE_A=${{secrets.SECRET_VALUE_A}}"
