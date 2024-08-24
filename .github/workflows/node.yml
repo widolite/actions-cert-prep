@@ -52,4 +52,4 @@ jobs:
         if: env.SECRET_VALUE == 'A'
         run: echo "SECRET_VALUE_A is equal to A" 
         env:
-          SECRET_VALUE: secrets.SECRET_VALUE_A
+          SECRET_VALUE: ${{secrets.SECRET_VALUE_A}}
