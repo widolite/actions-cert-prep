@@ -47,3 +47,9 @@ jobs:
       
       - name: print the secrets.
         run: echo "SECRET_VALUE_A=${{secrets.SECRET_VALUE_A}}"
+      
+      - name: conditional secret.
+        if: env.SECRET_VALUE == 'A'
+        run: echo "SECRET_VALUE_A is equal to A" 
+        env:
+          SECRET_VALUE: secrets.SECRET_VALUE_A
