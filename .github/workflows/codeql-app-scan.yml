@@ -1,0 +1,26 @@
+name: Scanning Code.
+
+on:
+  push: 
+    branches: 
+     - main
+  workflow_dispatch: 
+
+jobs:
+  scanning:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/
+
+    steps:
+      - name: checkout repo.
+        uses: actions/checkout@v3
+
+      - name: initialize codeQL.
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+        
+      - name: perform codeQL analysis.
+        uses: github/codeql-action/analyze@v3
