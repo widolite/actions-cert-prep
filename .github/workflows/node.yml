@@ -8,6 +8,11 @@ on:
 
 jobs:
   test:
+    services:
+      webserver:
+        image: nginx:latest
+        env:
+          NGINX_PORT: 8080
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -25,6 +30,8 @@ jobs:
       - name: run test suite.
         run: npm test
 
+      - name: testing nginx service running as sidecard container.
+        run: curl -X GET http://127.0.0.1:8080
   start-server:
     runs-on: ubuntu-latest
     needs: test
