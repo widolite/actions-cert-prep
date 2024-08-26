@@ -21,6 +21,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: javascript
+          source-root: app/
         
       - name: perform codeQL analysis.
         uses: github/codeql-action/analyze@v3
