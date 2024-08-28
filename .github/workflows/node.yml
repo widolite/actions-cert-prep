@@ -8,7 +8,7 @@ on:
 
 jobs:
   install_node_dependencies:
-    uses: widolite/.github/workflow-templates/common-step-build-node.yml@main
+    uses: widolite/workflows/.github/workflows/common-step-build-node.yml@main
   test:
     services:
       webserver:
