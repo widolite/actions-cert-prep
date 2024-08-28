@@ -26,8 +26,11 @@ jobs:
       - name: getting node modules
         uses: actions/download-artifact@v3
         with:
-          name: modules   
+          name: modules
+          path: app/
       
+      - run: ls -la
+
       - name: running the app.
         run: npm start &
 
