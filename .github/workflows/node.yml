@@ -27,8 +27,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: modules
-          path: app/
-      
+
+      - run: tar xvf node_modules.tar.gz -C app/
+        working-directory: ~/
+
       - run: ls -la
 
       - name: running the app.
